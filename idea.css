@@ -1,0 +1,81 @@
+#heading1
+{
+    font-size: 85px;
+    text-shadow: 4px 1px 1px yellow;
+    text-align: center;
+}
+#menu
+{
+    border-bottom: 15px groove black;
+    border-right: 15px groove black;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+}
+#m1,#m2,#m3,#m4
+{
+    margin-left: 22%;
+}
+button{
+    border-radius: 20px;
+    padding-left:10%;
+    padding-right: 10%;
+    background: linear-gradient(to top,white,orange);
+}
+#Main_box
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#box1,#box2,#box3
+{
+    border:5px groove black;
+}
+img{
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+}
+h3
+{
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-shadow: 1px 1px yellow;
+}
+select
+{
+    border-radius: 20px;
+    background: linear-gradient(to bottom,white,orange);
+}
+body{
+    background-repeat: no-repeat;
+    background: linear-gradient(to top , white,lightblue);
+}
+body{
+    animation-name: body_color;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+}
+@keyframes body_color{
+    0%{background-color: white;}
+    50%{background-color: black;}
+    100%{background-color: white;}
+}
+h1{
+    color: white;
+    font-size: 55px;
+    animation-name: header;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+@keyframes header{
+    0%{background-color: black;}
+    50%{background-color: white;color: black;}
+    100%{background-color: black;}
+}
+
+#color{
+    height: 20px;
+}

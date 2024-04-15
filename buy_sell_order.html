@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+      
+<style>
+    /* Basic styling for form container */
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styling for form inputs */
+    input[type="text"],
+    input[type="num"],
+    input[type="tel"],
+    input[type="contact"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    /* Styling for submit button */
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .col-9,.col-2,.col-4,.col-1{
+                border: 2px dotted white;
+                background-color: darkgray;}
+
+    /* Styling for submit button on hover */
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    h3{
+                margin-left: 30%;
+                font-weight: bolder;
+                font-size: 35px;
+            }
+            h2{
+                font-size: 40px;
+                text-shadow: 2px 2px 2px gray;
+
+            }
+            h5{
+                font-size: 10px;
+            }
+            h4{
+                color: red;
+            }
+</style>
+</head>
+<body>
+    <!---header...........................................................................-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <h2>Donitt</h2>
+            </div>
+            <div class="col-9">
+                <h3>Buy/Rent Things</h3>
+            </div>
+            <div class="col-1">
+                <a href="idea.html" class="btn btn-outline-danger btn-lg">Home</a>
+            </div>
+        </div>
+    </div>
+    <!--header finished...............................................................................-->
+    <br><br>
+    <!--price checker..........................................................-->
+    <div class="container">
+        <form action="#" method="post">
+         <div class="row">
+             <div class="col-4">
+                 <select id="checkerr">
+                     <option value=""><b>Menu:</b></option>
+                     <option value="White Shirt"><h6>1]White Shirt</h6></option>
+                     <option value="Black Shirt"><h6>2]Black Shirt</h6></option>
+                     <option value="Black Pant"><h6>3]Black Pant</h6></option>
+                     <option value="Blue Formal coat"><h6>4]Blue Formal Coat</h6></option>
+                     <option value="Blue Pant"><h6>5]Blue Pant</h6></option>
+                     <option value="Formal Tie"><h6>6]Formal Tie[black]</h6></option>
+                     <option value="Beard Trimmer"><h6>7]Beard Trimmer</h6></option>
+                     <option value="Electric Kettle"><h6>8]Electric Kettle</h6></option>
+                     <option value="Extension Board"><h6>9]Extension Board</h6></option>
+                     <option value="Cricket Bat"><h6>10]Cricket Bat</h6></option>
+                     <option value="Power Bank"><h6>11]Power Bank</h6></option>
+                     <option value="Guitar"><h6>12]Guitar</h6></option>
+                 </select>  
+             </div>
+             <div class="col-4">
+                 <input type="number" id="checker" name="checker" placeholder="Enter Quantity..">
+             </div>
+             <div class="col-4">
+                 <button id="para1" onclick="check()">Check Price</button>
+             </div>
+         </div>
+        </form>
+     </div>
+     <!--price checker ends...........................................................-->
+     <br><br>
+
+<div class="form-container">
+    <h2>We Charge 20 rs/- for delivery..</h2>
+    <form action="/sellbuy" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+
+        <label for="contact">Contact number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your Contact number..">
+
+        <label for="hostel">Select Hostel:</label>
+        <select id="hostel" onchange="fun1()">
+            <option value=""><b>Select Hostel:</b></option>
+            <option value="BH-1"><h6>1]BH-1</h6></option>
+            <option value="BH-2"><h6>2]BH-2</h6></option>
+            <option value="BH-3"><h6>3]BH-3</h6></option>
+            <option value="BH-4"><h6>4]BH-4</h6></option>
+            <option value="BH-5"><h6>5]BH-5</h6></option>
+            <option value="BH-6"><h6>6]BH-6</h6></option>
+            <option value="BH-7"><h6>7]BH-7</h6></option>
+            <option value="GH-1"><h6>8]GH-1</h6></option>
+            <option value="GH-2"><h6>9]GH-2</h6></option>
+            <option value="GH-3"><h6>10]GH-3</h6></option>
+            <option value="GH-4"><h6>11]GH-4</h6></option>
+            <option value="GH-5"><h6>12]GH-5</h6></option>
+            <option value="GH-6"><h6>13]GH-6</h6></option>
+            <option value="Apartment[41]"><h6>9]Apartment[41]</h6></option>
+        </select>
+        <input type="text" name="Hostell" id="Hostell">
+
+        <label for="food">Select Menu:</label>
+        <select id="food" onchange="fun()">
+            <option value=""><b>Menu:</b></option>
+            <option value="White Shirt"><h6>1]White Shirt</h6></option>
+            <option value="Black Shirt"><h6>2]Black Shirt</h6></option>
+            <option value="Black Pant"><h6>3]Black Pant</h6></option>
+            <option value="Blue Formal coat"><h6>4]Blue Formal Coat</h6></option>
+            <option value="Blue Pant"><h6>5]Blue Pant</h6></option>
+            <option value="Formal Tie"><h6>6]Formal Tie[black]</h6></option>
+            <option value="Beard Trimmer"><h6>7]Beard Trimmer</h6></option>
+            <option value="Electric Kettle"><h6>8]Electric Kettle</h6></option>
+            <option value="Extension Board"><h6>9]Extension Board</h6></option>
+            <option value="Cricket Bat"><h6>10]Cricket Bat</h6></option>
+            <option value="Power Bank"><h6>11]Power Bank</h6></option>
+            <option value="Guitar"><h6>12]Guitar</h6></option>
+        </select>
+        <input type="text" name="foodType" id="foodType">
+
+
+        <label for="buy">Select Option::&nbsp;&nbsp;&nbsp;</label>
+        Buy:&nbsp;&nbsp;<input type="radio" id="buy" name="buy" value="Buy">
+        Rent:&nbsp;<input type="radio" id="buy" name="buy" value="Rent">
+        <br><br>
+
+        <label for="Quan">Quantity:</label>
+        <input type="number" id="quan" name="quan" placeholder="Enter/ Quantity..">
+
+        <label for="payment">Payment Method:&nbsp;&nbsp;&nbsp;</label>
+        UPI:&nbsp;&nbsp;<input type="radio" id="pay" name="pay" value="UPI">
+        Cash:&nbsp;<input type="radio" id="pay" name="pay" value="Cash">
+        <br><br>
+        <h5>*NOTE:: You have to pay 20 rs/- after delivery.</h5>
+        <h5 style="color: red;">*NOTE:: Currently, we are not renting things, we are only selling the product..</h5>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function fun()
+        {
+            const ans = document.getElementById("food").value;
+            document.getElementById("foodType").value = ans;    
+        }
+        function fun1()
+        {
+            const h = document.getElementById("hostel").value;
+            document.getElementById("Hostell").value = h;
+        }
+        function check()
+        {
+            const ans = document.getElementById("checkerr").value;
+            
+            let price = 20;
+           const ws = 270;
+           const bs = 240;
+           const bp = 330;
+           const bc = 1950;
+           const blp = 350;
+           const ft = 80;
+           const tr= 250;
+           const ket = 200;
+           const ex = 180;
+           const bat = 400;
+           const pb = 1290;
+           const guitar = 3999;
+
+            const q = document.getElementById("checker").value;
+           if (ans == "White Shirt")
+           {
+                let temp = q * ws;
+                price = price + temp;
+           }
+           if(ans == "Black Shirt")
+           {
+            let temp = q * bs;
+            price = price + temp;
+           }
+           if(ans == "Black Pant")
+           {
+            let temp = q * bp;
+            price = price + temp;
+           }
+           if(ans == "Blue Pant")
+           {
+            let temp = q * blp;
+            price = price + temp;
+           }
+           if(ans == "Blue Formal coat")
+           {
+                let temp = q * bc;
+                price = price + temp;
+           }
+           if(ans == "Formal Tie")
+           {
+                let temp = q * ft;
+                price = price + temp;
+           }
+           if(ans == "Beard Trimmer")
+           {
+                let temp = q * tr;
+                price = price + temp;
+           }
+           if(ans == "Electric Kettle")
+           {
+            let temp = q * ket;
+            price = price + temp;
+           }
+           if(ans == "Extension Board")
+           {
+            let temp = q * ex;
+            price = price + temp;
+           }
+           if(ans == "Guitar")
+           {
+                let temp = q * guitar;
+                price = price + temp;
+           }
+           if(ans == "Cricket Bat")
+           {
+                let temp = q * bat;
+                price = price + temp;
+           }
+           if(ans == "Power Bank")
+           {
+                let temp = q * pb;
+                price = price + temp;
+           }
+           alert("Total Price is: " + price);
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <style>
+            #heading1
+{
+    font-size: 85px;
+    text-shadow: 4px 1px 1px yellow;
+    text-align: center;
+}
+#menu
+{
+    border-bottom: 15px groove black;
+    border-right: 15px groove black;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+}
+#m1,#m2,#m3,#m4
+{
+    margin-left: 22%;
+}
+button{
+    border-radius: 20px;
+    padding-left:10%;
+    padding-right: 10%;
+    background: linear-gradient(to top,white,orange);
+}
+#Main_box
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#box1,#box2,#box3
+{
+    border:5px groove black;
+}
+img{
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+}
+h3
+{
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-shadow: 1px 1px yellow;
+}
+select
+{
+    border-radius: 20px;
+    background: linear-gradient(to bottom,white,orange);
+}
+body{
+    background-repeat: no-repeat;
+    background: linear-gradient(to top , white,lightblue);
+}
+body{
+    animation-name: body_color;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+}
+@keyframes body_color{
+    0%{background-color: white;}
+    50%{background-color: black;}
+    100%{background-color: white;}
+}
+h1{
+    color: white;
+    font-size: 55px;
+    animation-name: header;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+@keyframes header{
+    0%{background-color: black;}
+    50%{background-color: white;color: black;}
+    100%{background-color: black;}
+}
+
+#color{
+    height: 20px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="color">
+            <div id="color1"><h4>lightblue</h4></div>
+            <div id="color2"><h4>Yellow</h4></div>
+            <div id="color3"><h4>Orange</h4></div>
+            <div id="color4"><h4>Green</h4></div>
+            <div id="color5"><h4>Red</h4></div>
+            <div id="color6"><h4>Lavender</h4></div>
+        </div>
+<!--heading...........................................-->
+        <h1 id="heading1">Donitt</h1>
+
+<!-----------menu bar.......................................................................-->
+        <div id="menu">
+            <div id="m1">
+            <a href="About.html">
+                <button>
+                    <h2>About US</h2>
+                </button>
+            </a>
+            </div>
+            <div id="m2">
+                <a href="order_type.html">
+                <button>
+                   <h2>Sell Things</h2>
+                   </button>
+                   </a>
+            </div>
+            <div id="m3">
+                <a href="how_to.html">
+                <button>
+                    <h2>How To Order</h2>
+                </button>
+                </a>
+            </div>
+            <div id="m4">
+                <a href="complaint.html">
+                <button>
+                    <h2>Complaint</h2>
+                </button>
+                </a>
+            </div>
+        </div>
+<!--menu bar end................................................................................-->
+        <br> <br> <br>
+<!--main box start...................................................................................-->
+        <div id="Main_box">
+                <div id="box1">
+                    <img src="C:\Users\sasha\OneDrive\Desktop\Codes\idea\html\khana.jpeg"> <br>
+                    <a href="del_type.html"><h3>Deliveries</h3></a>
+                </div>
+
+            <div id="box2">
+                <img src="C:\Users\sasha\OneDrive\Desktop\Codes\idea\html\buy_sell.jpeg"> <br>
+                <a href="buy_sell.html"><h3>Buy/Sell/Rent things</h3> </a>
+            </div>
+            <div id="box3">
+                <img src="C:\Users\sasha\OneDrive\Desktop\Codes\idea\html\parcel.jpeg"> <br>
+                <a href="parcel.html"><h3>Parcel Deliveries</h3></a>
+            </div>
+
+        </div>
+<!--main box ends........................................................................................--> 
+<script>
+    $(document).ready(function()
+    {
+        $("#color").css({"display":"grid","grid-template-columns":"auto auto auto auto auto auto","text-align":"center"});
+        $("#color1").css({"border":"2px solid black","background":"linear-gradient(to top,white,lightblue)"});
+        $("#color2").css({"border":"2px solid black","background":"linear-gradient(to top,white,yellow)"});
+        $("#color3").css({"border":"2px solid black","background":"linear-gradient(to top,white,orange)"});
+        $("#color4").css({"border":"2px solid black","background":"linear-gradient(to top,white,lightgreen)"});
+        $("#color5").css({"border":"2px solid black","background":"linear-gradient(to top,white,Red)"});
+        $("#color6").css({"border":"2px solid black","background":"linear-gradient(to top,white,Lavender)"});
+
+        // now we will use click function ..
+        $("#color1").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,lightblue)","background-repeat":"no-repeat"});
+        })
+        $("#color2").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,yellow)","background-repeat":"no-repeat"});
+        })
+        $("#color3").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,orange)","background-repeat":"no-repeat"});
+        })
+        $("#color4").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,lightgreen)","background-repeat":"no-repeat"});
+        })
+        $("#color5").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,red)","background-repeat":"no-repeat"});
+        })
+        $("#color6").click(function()
+        {
+            $("body").css({"background":"linear-gradient(to top,white,Lavender)","background-repeat":"no-repeat"});
+        })
+    })
+</script>
+                
+    </body>
+
+</html>
