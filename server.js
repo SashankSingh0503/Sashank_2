@@ -1,4 +1,26 @@
-const express = require("express");
+const {MongoClient} = require("mongodb");
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+ const db = client.db("Database-Donitt");
+ const collection1 = db.collection("Food-Orders:");
+ const collection2= db.collection("Medicine-Orders:");
+ const collection3 = db.collection("Groceries-Orders:");
+ const collection4 = db.collection("Parcel-Orders:");
+ const collection5 = db.collection("Buy-Orders:");
+ const collection6 = db.collection("Complaint:");
+ const collection7 = db.collection("Seller-info:");
+
+ async function connectToMongoDB() {
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB");
+    } catch (err) {
+        console.error("Error connecting to MongoDB:", err);
+    }
+}
+
+connectToMongoDB().then(() => {
+    const express = require("express");
 const app = express();
 const PORT = 3600;
 const bodyParser = require("body-parser");
@@ -52,227 +74,74 @@ app.get('/About.html', function (req, res) {
 
 //for food ordering......................................................
 app.post('/foodOrder', (req, res) => {
-    const Name = req.body.name;
-    const contact = req.body.contact;
-    const hostel = req.body.Hostell;
-    const menu = req.body.foodType;
-    const q = req.body.quan;
-    const payment = req.body.pay;
-    const Type = "Food Order";
-    // Constructing JSON response
-    const responseJSON = {
-        Service : Type,
-        Username: Name,
-        Contact_number: contact,
-        Hostel : hostel,
-        Order : menu,
-        Quantity : q,
-        Payment_mode : payment
-    };
-    console.log(responseJSON);
+    const responseJSON1 = req.body;
+   console.log("Food Order:");
+    console.log(responseJSON1);
+    console.log("\n");
+    collection1.insertOne(responseJSON1);
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
 //for medicine ordering.................................................................
 app.post('/medOrder', (req, res) => {
-    const Name = req.body.name;
-    const contact = req.body.contact;
-    const hostel = req.body.Hostell;
-    const menu = req.body.foodType;
-    const q = req.body.quan;
-    const payment = req.body.pay;
-    const Type = "Medicine Order";
-    // Constructing JSON response
-    const responseJSON = {
-        Service : Type,
-        Username: Name,
-        Contact_number: contact,
-        Hostel : hostel,
-        Order : menu,
-        Quantity : q,
-        Payment_mode : payment
-    };
-    console.log(responseJSON);
+    const responseJSON2 = req.body;
+    console.log("Medicine Order:");
+    console.log(responseJSON2);
+    console.log("\n");
+    collection2.insertOne(responseJSON2);
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
 
 //for groceries ordering................................................
 app.post('/grocOrder', (req, res) => {
-    const Name = req.body.name;
-    const contact = req.body.contact;
-    const hostel = req.body.Hostell;
-    const menu = req.body.foodType;
-    const q = req.body.quan;
-    const payment = req.body.pay;
-    const Type = "Grocery Order";
-    // Constructing JSON response
-    const responseJSON = {
-        Service : Type,
-        Username: Name,
-        Contact_number: contact,
-        Hostel : hostel,
-        Order : menu,
-        Quantity : q,
-        Payment_mode : payment
-    };
-    console.log(responseJSON);
+    const responseJSON3 = req.body;
+    console.log("Grocery Order:");
+    console.log(responseJSON3);
+    console.log("\n");
+    collection3.insertOne(responseJSON3);
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
 
 //for parcel Deliveries............................................................
 app.post('/Parcel', (req, res) => {
-    const Name = req.body.name;
-    const contact = req.body.contact;
-    const appname = req.body.order;
-    const track = req.body.idd;
-    const contact1 = req.body.contact1;
-    const Type = "Parcel Delivery";
-    // Constructing JSON response
-    const responseJSON = {
-        Service : Type,
-        Username: Name,
-        Contact_number: contact,
-        Delivery_app : appname,
-        Tracking_id : track,
-        Agent_number : contact1,
-    };
-    console.log(responseJSON);
+    const responseJSON4 = req.body;
+    console.log("Parcel-Delivery:");
+    console.log(responseJSON4);
+    console.log("\n");
+    collection4.insertOne(responseJSON4);
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
 
 app.post('/sellbuy', (req, res) => {
-    const Name = req.body.name;
-    const contact1 = req.body.contact;
-    const h = req.body.Hostell;
-    const menu = req.body.foodType;
-    const q = req.body.quan;
-    const payment = req.body.pay;
-    const Type = "Buy Things Order";
-    // Constructing JSON response
-    const responseJSON = {
-        Service : Type,
-        Username: Name,
-        Contact_number: contact1,
-        Hostel : h,
-        Order : menu,
-        Quantity : q,
-        Payment_Option : payment
-    };
-    console.log(responseJSON);
+    const responseJSON5 = req.body;
+   console.log("Buy/Sell Order:");
+   console.log(responseJSON5);
+   console.log("\n");
+   collection5.insertOne(responseJSON5)
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
 
 app.post("/complan" , (req,res)=>{
-    const t = "Complaint/Feedback";
-    const Name = req.body.name;
-    const Email = req.body.email;
-    const mes = req.body.message;
-
-    const responseJSON = {
-        Service : t,
-        UserName : Name,
-        Email_id : Email,
-        Message : mes
-    };
-    console.log(responseJSON);
+    const responseJSON6 = req.body;
+    console.log("Complaint-Details:");
+    console.log(responseJSON6);
+    console.log("\n");
+    collection6.insertOne(responseJSON6);
     res.sendFile(__dirname + "/" + "thank.html");
 });
 
-
-app.get("/ANTISEPTIC.JPG" , (req,res)=>{
-    res.send("<img src= 'C:\Users\sasha\OneDrive\Desktop\Codes\idea\html\antiseptic.jpg'>")
-})
 app.post("/Sellerform" , (req,res)=>{
-    const t = "Seller Info";
-    const Name = req.body.name;
-    const Email  = req.body.email;
-    const contact1 = req.body.contact;
-    const Item = req.body.item;
-    const pr = req.body.price;
-
-    const responseJSON = {
-        Service : t,
-        UserName : Name,
-        Email_id : Email,
-        Contact_number: contact1,
-        Item_name : Item,
-        Selling_Price : pr
-    };
-    console.log(responseJSON);
+   const responseJSON7 = req.body;
+   console.log("Seller-Details:");
+   console.log(responseJSON7);
+   console.log("\n");
+   collection7.insertOne(responseJSON7);
     res.sendFile(__dirname + "/" + "thank.html");
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 app.listen(PORT , (err)=>
 {
@@ -284,4 +153,21 @@ app.listen(PORT , (err)=>
     {
         console.log("Server is running on: localhost:" +PORT );
     }
-})
+});
+    // Define your Express routes here
+    // Move the app.listen inside this block as well
+    // Don't close the client connection here
+});
+
+process.on('SIGINT', async () => {
+    try {
+        await client.close();
+        console.log("MongoDB connection closed");
+        process.exit(0);
+    } catch (err) {
+        console.error("Error closing MongoDB connection:", err);
+        process.exit(1);
+    }
+});
+
+
