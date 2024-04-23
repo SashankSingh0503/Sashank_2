@@ -154,9 +154,7 @@ app.listen(PORT , (err)=>
         console.log("Server is running on: localhost:" +PORT );
     }
 });
-    // Define your Express routes here
-    // Move the app.listen inside this block as well
-    // Don't close the client connection here
+  
 });
 
 process.on('SIGINT', async () => {
